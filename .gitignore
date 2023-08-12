@@ -131,3 +131,6 @@ dist
 
 # user config files
 config.js
+
+# vim .swps i forget about because i'm a moron
+.*.sw*
