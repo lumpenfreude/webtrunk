@@ -7,9 +7,9 @@ services:
       proxy:
         aliases:
           - webtrunk
-    command: bin/webtrunk
+    command: node /app/bin/webtrunk.mjs
     restart: on-failure
 
-networks: 
+networks:
   proxy:
     external: true

@@ -1,29 +1,31 @@
-	{
-		"name": "webtrunk",
-		"version": "0.0.1",
-		"description": "a node.js webfinger service for mastodon",
-		"main": "bin/webtrunk",
-		"author": {
-			"name": "elen p",
-			"email": "lumpenfreude@gmail.com"
-		},
-		"license": "AGPL",
-		"repository": {
-			"type": "git",
-			"url": "git://github.com/lumpenfreude/webtrunk.git"
-		},
-		"homepage": "https://github.com/lumpenfreude/webtrunk",
-		"keywords": [
-			"webfinger",
-			"service",
-			"server"
-		],
-		"dependencies": {
-			"webfinger-handler": ">=1.1.0",
-			"http": "0.0.0",
-			"express": ">=4.0.0",
-			"method-override": ">=3.0.0",
-			"errorhandler": ">=1.5.0",
-			"morgan": ">=1.0.0"
-		}
+{
+	"name": "webtrunk",
+	"version": "0.0.1",
+	"description": "a node.js webfinger service for mastodon",
+	"author": {
+		"name": "elen p",
+		"email": "lumpenfreude@gmail.com"
+	},
+	"license": "AGPL",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/lumpenfreude/webtrunk.git"
+	},
+	"homepage": "https://github.com/lumpenfreude/webtrunk",
+	"keywords": [
+		"webfinger",
+		"service",
+		"server"
+	],
+	"dependencies": {
+		"errorhandler": ">=1.5.0",
+		"express": ">=4.0.0",
+		"http": "0.0.0",
+		"method-override": ">=3.0.0",
+		"webfinger-handler": ">=1.1.0"
+	},
+	"devDependencies": {
+		"@types/errorhandler": "^1.5.0",
+		"@types/method-override": "^0.0.32"
 	}
+}
