@@ -133,5 +133,8 @@ dist
 config.js
 
 # vim .swps i forget about because i'm a moron
-.*.sw? 
+.*.sw?
 *~
+
+# Non Example Config
+/config.mjs
