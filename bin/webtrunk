@@ -5,8 +5,9 @@
 			config = require('../config.js'),
 			http = require('http'),
 			path = require('path'),
-			methodOverride = require('method-override');
-			errorhandler = require('errorhandler');
+			methodOverride = require('method-override'),
+			errorhandler = require('errorhandler'),
+			webfingerHandler = require('webfinger-handler');
 			logger = require('morgan');
 
 	var app = express();

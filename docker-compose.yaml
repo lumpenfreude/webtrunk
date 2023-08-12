@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  webtrunk:
+    container_name: webtrunk
+    image: docker.io/lumpenfreude/webtrunk:0.1
+    networks:
+      proxy:
+        aliases:
+          - webtrunk
+    command: bin/webtrunk
+    restart: on-failure
+
+networks: 
+  proxy:
+    external: true
