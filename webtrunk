@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+(function(undefined) {
+	var express = require('express'),
+			config = require('../config.js'),
+			http = require('http'),
+			path = require('path'),
+			methodOverride = require('method-override');
+			errorhandler = require('errorhandler');
+			logger = require('morgan');
+
+	var app = express();
+	var port = config.port || 9910;
+	var ip = config.ip || '';
+
+	var fing = require('../lib/fingerize');
+	
+		app.set('port', process.env.PORT || port);
+		app.set('views', __dirname + '/views');
+		app.set('view engine', 'jade');
+		app.use(logger('dev'));
+		app.use(fing());
+		app.use(methodOverride());
+		app.use(express.static(path.join(__dirname, 'public')));
+
+			if (process.env.NODE_ENV === 'development') {
+				app.use(errorhandler())
+			}
+		
+	app.enable('trust proxy');
+	
+	app.get('/', function (req, res) {
+		res.send("webtrunk is chooglin");
+	});
+	
+	app.get('/.well-nown/host-meta', function (req, res) {
+		wf.hostMeta(req, res);
+	});
+	
+	app.get('/.well-known/host-meta.json', function (req, res) {
+		wf.hostMeta(req, res);
+	});
+	
+	app.get('/.well-known/webfinger', function (req, res) {
+		wf.hostMeta(req, res);
+	});
+	
+	http.createServer(app).listen(app.get('port'), ip, function () {
+    console.log("webfinger service listening on port " + app.get('port'));
+  });
+})();
