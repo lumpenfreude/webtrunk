@@ -1,13 +1,12 @@
 import express from 'express';
-import config from '../config.mjs'
 import http from 'http';
 import methodOverride from 'method-override';
 import errorhandler from 'errorhandler';
 import { wf, fingerizer } from '../lib/fingerizer.mjs'
 
 var app = express();
-var port = config.port || 9910;
-var ip = config.ip || '';
+var port = 9910;
+var ip = '0.0.0.0';
 
 app.set('port', process.env.PORT || port);
 app.use(methodOverride());
